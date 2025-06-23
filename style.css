@@ -1,0 +1,131 @@
+body {
+    height: 100vh; /* Add this line */
+    min-height: 100vh;
+    background: linear-gradient(135deg, #181818 0%, #232526 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'SF Pro Display', Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 30px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.container {
+    width: 340px;
+    background: rgba(0,0,0,0.92);
+    border-radius: 36px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 32px 18px 18px 18px;
+    backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(255,255,255,0.08);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.input {
+    width: 100%;
+    height: 70px;
+    font-size: 2.5rem;
+    border: none;
+    border-radius: 16px;
+    margin-bottom: 28px;
+    padding: 0 18px;
+    background: transparent;
+    color: #fff;
+    text-align: right;
+    box-sizing: border-box;
+    outline: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.button {
+    width: 68px;
+    height: 68px;
+    margin: 0 2px;
+    font-size: 1.7rem;
+    border: none;
+    border-radius: 50%;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover {
+    filter: brightness(1.15);
+}
+
+.button:active {
+    filter: brightness(0.85);
+}
+
+/* Function keys (AC, back, %, ()) */
+.row:first-of-type .button {
+    background: #a5a5a5;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Operator keys (/, X, -, +, =) */
+.row .button:last-child,
+.button.operator {
+    background: #ff9500;
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+/* Number keys */
+.row:nth-child(n+3) .button:not(:last-child) {
+    background: #222;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* 0 button: double width */
+.row:last-child .button:first-child {
+    width: 144px;
+    border-radius: 34px;
+    justify-content: flex-start;
+    padding-left: 28px;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .container {
+        width: 98vw;
+        padding: 16px 2vw;
+    }
+    .button {
+        width: 20vw;
+        height: 12vw;
+        min-width: 48px;
+        min-height: 48px;
+        font-size: 1.1rem;
+    }
+    .input {
+        font-size: 1.2rem;
+        height: 40px;
+    }
+}
